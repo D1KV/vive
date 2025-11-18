@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vive – Business Partnership</title>
+
+  <!-- Bootstrap 5 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+
+
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.css" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet-routing-machine/dist/leaflet-routing-machine.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+
+
+      <!-- Top Bar -->
+    <div class="top-bar text-center text-white py-1">
+        Nature's science in every sip.
+    </div>
+
+    <nav class="navbar navbar-expand-lg bg-white sticky-top">
+        <div class="container">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <i class="bi bi-list"></i>
+            </button>
+            
+           <a class="navbar-brand" href="#">
+          <img src="images/vive-logo.png" alt="Vive Logo" height="40">
+          </a>
+            
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">About us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="products.html">Products</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contact</a>
+                    </li>
+                </ul>
+            </div>
+
+            <a href="#" class="btn btn-nav-custom shadow">Become a Distributor</a>
+        </div>
+    </nav>
+
+
+  <!-- ============ HERO SECTION ============ -->
+  <header class="partnership-hero text-white d-flex align-items-center">
+    <div class="container text-center">
+      <h1 class=" partner-top fw-bold display-4">Partner With Vive</h1>
+      <p class="partner-text lead">Join our wholesale & distribution program and grow with us.</p>
+    </div>
+  </header>
+
+  <!-- ============ WHY PARTNER ============ -->
+  <section class="py-5">
+    <div class="container text-center">
+      <h2 class="fw-bold mb-4">Why Partner With Us?</h2>
+      <div class="row g-4">
+        <div class="col-md-3">
+          <i class="bi bi-award fs-1 text-success"></i>
+          <h5 class="mt-3">Trusted Brand</h5>
+          <p class="text-muted">Backed by science, trusted by customers nationwide.</p>
+        </div>
+        <div class="col-md-3">
+          <i class="bi bi-currency-exchange fs-1 text-success"></i>
+          <h5 class="mt-3">Competitive Pricing</h5>
+          <p class="text-muted">Enjoy attractive wholesale prices & profit margins.</p>
+        </div>
+        <div class="col-md-3">
+          <i class="bi bi-truck fs-1 text-success"></i>
+          <h5 class="mt-3">Reliable Supply</h5>
+          <p class="text-muted">Consistent product availability and timely delivery.</p>
+        </div>
+        <div class="col-md-3">
+          <i class="bi bi-people fs-1 text-success"></i>
+          <h5 class="mt-3">Nationwide Network</h5>
+          <p class="text-muted">Join a growing network of retailers and distributors.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FORM SECTION ============ -->
+  <section class="py-5 bg-light">
+    <div class="container">
+      <div class="text-center mb-5">
+        <h2 class="fw-bold">Wholesale Partnership Form</h2>
+        <p class="text-muted">Fill out the form below to register your interest. Our team will review your application.</p>
+      </div>
+
+      <div class="row justify-content-center">
+        <div class="col-lg-8">
+          <form id="partnershipForm" class="p-4 shadow rounded bg-white">
+            <div class="row g-3">
+              <div class="col-md-6">
+                <label class="form-label">Full Name / Business Name</label>
+                <input type="text" class="form-control" required>
+              </div>
+              <div class="col-md-6">
+                <label class="form-label">Email Address</label>
+                <input type="email" class="form-control" required>
+              </div>
+              <div class="col-md-6">
+                <label class="form-label">Phone Number</label>
+                <input type="tel" class="form-control" required>
+              </div>
+              <div class="col-md-6">
+                <label class="form-label">Business Address</label>
+                <input type="text" class="form-control" required>
+              </div>
+              <div class="col-md-6">
+                <label class="form-label">Type of Partnership</label>
+                <select class="form-select" required>
+                  <option value="">Select...</option>
+                  <option value="Distributor">Distributor</option>
+                  <option value="Retailer">Retailer</option>
+                  <option value="Other">Other</option>
+                </select>
+              </div>
+              <div class="col-md-12">
+                <label class="form-label">Message / Business Details</label>
+                <textarea class="form-control" rows="4"></textarea>
+              </div>
+            </div>
+            <div class="text-center mt-4">
+              <button type="submit" class="btn btn-success px-4 rounded-pill fw-bold">
+                Submit Application
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================== Footer ============================== -->
+<footer class="footer-section">
+  <div class="container py-5">
+    <div class="row gy-4">
+
+      <div class="col-lg-4 col-md-12">
+        <img src="images/vive-logo.png" height="40" alt="Vive Logo" class="footer-logo">
+        <p class="text-muted small">Refresh your body, boost your energy, and live in balance with every sip of Vive.</p>
+        <div class="social-icons">
+          <a href="#"><i class="bi bi-facebook"></i></a>
+          <a href="#"><i class="bi bi-instagram"></i></a>
+          <a href="#"><i class="bi bi-tiktok"></i></a>
+        </div>
+      </div>
+
+      <div class="col-lg-2 col-md-3 col-6">
+        <h5 class="mb-3">Products</h5>
+        <ul class="list-unstyled footer-links">
+          <li class="mb-2"><a href="vive-active.html">Vive Active</a></li>
+          <li class="mb-2"><a href="vive-green.html">Vive Green</a></li>
+          <li class="mb-2"><a href="vive-silver.html">Vive Silver</a></li>
+          <li class="mb-2"><a href="vive-gold.html">Vive Gold</a></li>
+        </ul>
+      </div>
+
+      <div class="col-lg-2 col-md-3 col-6">
+        <h5 class="mb-3">Support</h5>
+        <ul class="list-unstyled footer-links">
+          <li class="mb-2"><a href="contact.html">Help Center</a></li>
+          <li class="mb-2"><a href="faq.html">FAQs</a></li>
+          <li class="mb-2"><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+
+      <div class="col-lg-2 col-md-3 col-6">
+        <h5 class="mb-3">Explore</h5>
+        <ul class="list-unstyled footer-links">
+          <li class="mb-2"><a href="blog.html">Blog</a></li>
+          <li class="mb-2"><a href="events.html">Events</a></li>
+          <li class="mb-2"><a href="careers.html">Careers</a></li>
+        </ul>
+      </div>
+
+      <div class="col-lg-2 col-md-3 col-6">
+        <h5 class="mb-3">Contact Us</h5>
+        <ul class="list-unstyled footer-links">
+          <li class="mb-2"><a href="tel:+2348137310107"><i class="bi bi-telephone-fill me-2"></i>+2348137310107</a></li>
+          <li class="mb-2"><a href="mailto:info@vive.com"><i class="bi bi-envelope-fill me-2"></i>info@vive.com</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom d-flex flex-column flex-md-row justify-content-between align-items-center mt-4">
+      <p class="text-muted mb-2 mb-md-0">&copy; 2025 Vive. All rights reserved.</p>
+      <div class="footer-legal-links">
+        <a href="privacy.html" class="me-3">Privacy Policy</a>
+        <a href="terms.html" class="me-3">Terms of Use</a>
+        <a href="legal.html" class="me-3">Legal</a>
+        <a href="#">Site Map</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+  <!-- ============ CONFIRMATION MODAL ============ -->
+  <div class="modal fade" id="confirmationModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content text-center p-4">
+        <i class="bi bi-check-circle-fill text-success fs-1 mb-3"></i>
+        <h5 class="fw-bold">Application Submitted!</h5>
+        <p>Your partnership application has been received. Our team will review and contact you shortly.</p>
+        <button type="button" class="btn btn-success rounded-pill px-4" data-bs-dismiss="modal">OK</button>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+  <script>
+    // Confirmation modal trigger
+    document.getElementById("partnershipForm").addEventListener("submit", function(e){
+      e.preventDefault();
+      const modal = new bootstrap.Modal(document.getElementById("confirmationModal"));
+      modal.show();
+      this.reset();
+    });
+  </script>
+</body>
+</html>

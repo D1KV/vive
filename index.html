@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vive - Nature's Sip</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.css" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet-routing-machine/dist/leaflet-routing-machine.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+
+</head>
+
+<body>
+    <!-- Top Bar -->
+    <div class="top-bar text-center text-white py-1">
+        Nature's science in every sip.
+    </div>
+
+    <nav class="navbar navbar-expand-lg bg-white sticky-top">
+        <div class="container">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <i class="bi bi-list"></i>
+            </button>
+            
+           <a class="navbar-brand" href="#">
+          <img src="images/vive-logo.png" alt="Vive Logo" height="40">
+          </a>
+            
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">About us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="products.html">Products</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contact</a>
+                    </li>
+                </ul>
+            </div>
+
+            <a href="#" class="btn btn-nav-custom shadow">Become a Distributor</a>
+        </div>
+    </nav>
+
+
+    <!-- HERO SECTION -->
+    <section class="hero-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6 offset-lg-6">
+    <div class="hero-content">
+        <h6 class="eyebrow text-uppercase">From Nature, For You</h6>
+        <h1 class="display-3 fw-bold">True Balance</h1>
+        
+        <a href="products.html" class="btn btn-primary-custom shadow">See Products</a>
+        
+        <div class="hero-dots mt-4">
+            <span class="dot active"></span>
+            <span class="dot"></span>
+        </div>
+    </div>
+</div>
+</div>
+
+<!-- Store Search Bar -->
+<div class="row">
+  <div class="col-lg-10">
+    <div class="search-form-container mt-5 shadow p-3 rounded bg-white">
+      <form action="#" onsubmit="return false;">
+        <div class="input-group">
+          <input id="location-input" 
+                 type="text" 
+                 class="form-control border-0" 
+                 placeholder="ENTER YOUR LOCATION">
+          <button id="find-store-btn" class="btn btn-success d-flex align-items-center" type="button">
+            <i class="bi bi-geo-alt-fill me-2"></i> Find a Store
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+
+    </div>
+</section>
+
+
+  <!-- Top split section -->
+<section class="vive-section small-section">
+  <div class="container-fluid">
+    <div class="row g-0 align-items-center">
+      <!-- Text/Content -->
+      <div class="col-lg-7 p-4">
+        <h1 class="fw-bold section-heading">Wellness, Made Simple</h1>
+        
+        <div class="row my-4">
+          <div class="col-md-6 mb-3">
+            <h5 class="fw-bold">Natural Ingredients</h5>
+            <p class="text-muted small">Every Vive bottle is crafted from carefully selected plant-based extracts for pure, natural vitality.</p>
+          </div>
+          <div class="col-md-6 mb-3">
+            <h5 class="fw-bold">Daily Energy</h5>
+            <p class="text-muted small">Boost stamina and focus with antioxidants, vitamins, and nutrients that keep you refreshed.</p>
+          </div>
+          <div class="col-md-6 mb-3">
+            <h5 class="fw-bold">Immune Support</h5>
+            <p class="text-muted small">Packed with flavonoids and herbal blends that strengthen your natural defenses.</p>
+          </div>
+          <div class="col-md-6 mb-3">
+            <h5 class="fw-bold">Balanced Living</h5>
+            <p class="text-muted small">From stress relief to active recovery, Vive helps you live every day at your best.</p>
+          </div>
+        </div>
+
+        <a href="#products" class="btn btn-success rounded-pill btn-sm see-products-btn">See All Products</a>
+      </div>
+
+      <!-- Video & Socials -->
+      <div class="col-lg-5 d-flex flex-column">
+        <!-- Thumbnail Video -->
+        <div class="video-container position-relative">
+          <img src="images/video-thumbnail.jpg" alt="Vive Drinks" class="img-fluid rounded shadow">
+          <button class="play-btn position-absolute top-50 start-50 translate-middle" 
+                  data-bs-toggle="modal" data-bs-target="#videoModal">
+            <i class="bi bi-play-circle-fill text-white fs-1"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- Video Modal -->
+<div class="modal fade" id="videoModal" tabindex="-1" aria-labelledby="videoModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-lg">
+    <div class="modal-content bg-dark">
+      <div class="modal-body p-0">
+        <div class="ratio ratio-16x9">
+          <iframe id="viveVideo" 
+                  src="https://www.youtube.com/embed/VIDEO_ID?enablejsapi=1" 
+                  title="Vive Video" 
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                  allowfullscreen>
+          </iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  // Stop video when modal closes
+  const videoModal = document.getElementById('videoModal');
+  const viveVideo = document.getElementById('viveVideo');
+
+  videoModal.addEventListener('hidden.bs.modal', () => {
+    viveVideo.contentWindow.postMessage('{"event":"command","func":"stopVideo","args":""}', '*');
+  });
+</script>
+
+
+  <!-- Vive Journey Section -->
+<section class="vive-journey bg-light">
+  <div class="container text-center py-5">
+    <h3 class="fw-bold mb-2">The Simple Way to Feel Your Best</h3>
+    <p class="mb-4">Discover a wellness routine that works with your life — from your first sip to lasting vitality.</p>
+
+    <div class="row g-4 justify-content-center mb-4">
+      <div class="col-6 col-md-3 step">
+        <i class="bi bi-droplet-half fs-1 text-success"></i>
+        <div class="fw-semibold mt-2">1. Choose Your Vive</div>
+        <p class="small text-muted">Pick the blend that matches your lifestyle goals.</p>
+      </div>
+      <div class="col-6 col-md-3 step">
+        <i class="bi bi-box2-heart fs-1 text-success"></i>
+        <div class="fw-semibold mt-2">2. Sip Daily</div>
+        <p class="small text-muted">Enjoy delicious plant-powered nutrition every day.</p>
+      </div>
+      <div class="col-6 col-md-3 step">
+        <i class="bi bi-heart-pulse fs-1 text-success"></i>
+        <div class="fw-semibold mt-2">3. Feel the Change</div>
+        <p class="small text-muted">Boost energy, immunity, and inner balance naturally.</p>
+      </div>
+      <div class="col-6 col-md-3 step">
+        <i class="bi bi-emoji-smile fs-1 text-success"></i>
+        <div class="fw-semibold mt-2">4. Live Fully</div>
+        <p class="small text-muted">Stay refreshed, recharged, and ready for life.</p>
+      </div>
+    </div>
+
+    <a href="#products" class="btn btn-success rounded-pill px-4 py-2">Shop the Vive Range</a>
+  </div>
+</section>
+
+
+
+<!-- PRODUCTS HIGHLIGHT -->
+
+    <div class="text-center mb-5">
+  <h2 class="fw-bold display-6 text-success products-heading">Discover the Vive Range</h2>
+  <div class="d-flex justify-content-center mt-3">
+    <span class="badge bg-success-subtle text-success rounded-pill px-3 py-2">
+      Wellness · Energy · Balance · Vitality
+    </span>
+  </div>
+</div>
+
+
+<div class="container py-5">
+  <div class="row g-4 row-cols-1 row-cols-sm-2 row-cols-lg-4">
+
+
+   <!-- Product 1 -->
+    <div class="col">
+      <div class="card product-card h-100 text-center">
+        <img src="images/Vive-Green.png" class="card-img-top p-3" alt="Vive Green">
+        <div class="card-body d-flex flex-column">
+          <h5 class="card-title fw-bold">Vive Green</h5>
+          <p class="card-text small flex-grow-1">
+            Refreshing daily wellness blend packed with flavonoids to boost energy and immunity.
+          </p>
+          <a href="vive-green.html" class="btn btn-success btn-sm rounded-pill mt-auto">See Product</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Product 2 -->
+    <div class="col">
+      <div class="card product-card h-100 text-center">
+        <img src="images/Vive-Gold.png" class="card-img-top p-3" alt="Vive Gold">
+        <div class="card-body d-flex flex-column">
+          <h5 class="card-title fw-bold">Vive Gold</h5>
+          <p class="card-text small flex-grow-1">
+            Premium antioxidant-rich formula for heart, brain, and metabolic health support.
+          </p>
+          <a href="vive-gold.html" class="btn btn-success btn-sm rounded-pill mt-auto">See Product</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Product 3 -->
+    <div class="col">
+      <div class="card product-card h-100 text-center">
+        <img src="images/Vive-Silver.png" class="card-img-top p-3 product-img silver-imgs" alt="Vive Silver">
+        <div class="card-body d-flex flex-column">
+          <h5 class="card-title fw-bold">Vive Silver</h5>
+          <p class="card-text small flex-grow-1">
+            Balanced wellness support for stress relief, relaxation, and overall vitality.
+          </p>
+          <a href="vive-silver.html" class="btn btn-success btn-sm rounded-pill mt-auto">See Product</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Product 4 -->
+    <div class="col">
+      <div class="card product-card h-100 text-center">
+        <img src="images/Vive-Active.png" class="card-img-top p-3" alt="Vive Active">
+        <div class="card-body d-flex flex-column">
+          <h5 class="card-title fw-bold">Vive Active</h5>
+          <p class="card-text small flex-grow-1">
+            Formulated for active lifestyles – improves stamina, circulation, and recovery.
+          </p>
+          <a href="vive-active.html" class="btn btn-success btn-sm rounded-pill mt-auto">See Product</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+<!--Testimonial Section-->
+<section class="testimonial-section">
+  <div class="container">
+    <div id="testimonialSlider" class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-inner">
+
+        <!-- Testimonial 1 -->
+        <div class="carousel-item active">
+          <div class="testimonial-card">
+
+            <!-- Quote Icon Above -->
+            <div class="testimonial-quote-graphic text-center mb-3">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 80">
+                <path d="M0 80H35V45C35 20.147 15.672 0 0 0V15C7.458 15 15 22.163 15 30V80zM65 80H100V45C100 20.147 80.672 0 65 0V15C72.458 15 80 22.163 80 30V80z"/>
+              </svg>
+            </div>
+
+            <!-- Testimonial Content -->
+            <div class="testimonial-content shadow-sm">
+              <p class="quote-text">
+                “Vive has become part of my daily routine. It gives me clean, refreshing energy without the crash, and I feel healthier with every sip.”
+              </p>
+              <div class="row align-items-center mt-4 pt-4 border-top">
+                <div class="col-sm-8">
+                  <div class="author-details">
+                    <h5 class="fw-bold mb-0">Chioma Adeyemi</h5>
+                    <p class="text-muted mb-0">Wellness Enthusiast</p>
+                  </div>
+                </div>
+                <div class="col-sm-4 text-sm-end mt-3 mt-sm-0">
+                  <img src="images/vive-logo-dark.png" alt="Vive Logo" class="company-logo">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Testimonial 2 -->
+        <div class="carousel-item">
+          <div class="testimonial-card">
+            <div class="testimonial-quote-graphic text-center mb-3">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 80">
+                <path d="M0 80H35V45C35 20.147 15.672 0 0 0V15C7.458 15 15 22.163 15 30V80zM65 80H100V45C100 20.147 80.672 0 65 0V15C72.458 15 80 22.163 80 30V80z"/>
+              </svg>
+            </div>
+            <div class="testimonial-content shadow-sm">
+              <p class="quote-text">
+                “The taste is amazing, and I love that Vive uses natural ingredients. It’s my go-to for staying balanced and energized.”
+              </p>
+              <div class="row align-items-center mt-4 pt-4 border-top">
+                <div class="col-sm-8">
+                  <div class="author-details">
+                    <h5 class="fw-bold mb-0">David Okoro</h5>
+                    <p class="text-muted mb-0">Fitness Coach</p>
+                  </div>
+                </div>
+                <div class="col-sm-4 text-sm-end mt-3 mt-sm-0">
+                  <img src="images/vive-logo-dark.png" alt="Vive Logo" class="company-logo">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Carousel Controls -->
+      <button class="carousel-control-prev" type="button" data-bs-target="#testimonialSlider" data-bs-slide="prev">
+        <span class="carousel-control-icon" aria-hidden="true"><i class="bi bi-arrow-left-circle"></i></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#testimonialSlider" data-bs-slide="next">
+        <span class="carousel-control-icon" aria-hidden="true"><i class="bi bi-arrow-right-circle"></i></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+  </div>
+</section>
+
+
+
+
+<!-- ==================== HCP CTA SECTION ==================== -->
+<section class="hcp-cta py-5 bg-light">
+  <div class="container text-center">
+    <h3 class="fw-bold mb-3">For Healthcare Professionals</h3>
+    <p class="text-muted mb-4">
+      Are you a healthcare professional? Register to gain access to detailed product information, 
+      clinical insights, and exclusive trial opportunities.
+    </p>
+    <a href="hcp.html" class="btn btn-success rounded-pill px-4">
+      Access HCP Portal
+    </a>
+  </div>
+</section>
+
+
+
+<!-- Store Locator Modal -->
+<div class="modal fade" id="storeLocatorModal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-lg modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Store Locator</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <!-- Map Container -->
+        <div id="store-map-popup" style="height: 400px;"></div>
+
+        <!-- New Nearest Store Button -->
+        <div class="text-center mt-3">
+          <button id="find-nearest-store-btn" class="btn btn-outline-success">
+            <i class="bi bi-crosshair me-2"></i> Find Nearest Store
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<section class="event-promo py-5 text-white text-center">
+  <div class="container">
+    <h2 class="fw-bold mb-3">Join Our Free Wellness Event!</h2>
+    <p class="lead mb-4">Vive partners with the University of Mona for an inspiring wellness experience.  
+    Discover natural vitality and health — free for all attendees.</p>
+    <a href="events.html" class="btn btn-light rounded-pill px-4 fw-bold">
+      Register Now
+    </a>
+  </div>
+</section>
+
+
+
+
+<!-- ===================== Newsletter (overlaps into footer) ===================== -->
+<section class="newsletter-wrapper">
+  <div class="container">
+    <div class="newsletter-section shadow-lg rounded-4">
+      <div class="row align-items-center g-4">
+        <div class="col-lg-4 d-none d-lg-flex justify-content-center">
+  <div class="envelope-icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+      <!-- Envelope base -->
+      <rect x="4" y="16" width="56" height="32" rx="4" ry="4" fill="#fff" stroke="#0b7d2e" stroke-width="3"/>
+      <!-- Flap -->
+      <polygon class="flap" points="4,16 32,36 60,16" fill="#0b7d2e"/>
+    </svg>
+  </div>
+</div>
+
+        <div class="col-lg-8">
+          <h3 class="mb-2">Stay Refreshed with Vive</h3>
+          <p class="mb-3 text-white-75">Get exclusive wellness tips, product updates, and special offers delivered straight to your inbox.</p>
+
+          <form action="#" method="post" class="newsletter-form">
+            <div class="input-group">
+              <input type="email" class="form-control" placeholder="Enter your email" required>
+              <button class="btn btn-subscribe" type="submit">Subscribe</button>
+            </div>
+          </form>
+
+          <div class="privacy-link mt-2 small">
+            You can unsubscribe at any time. Read our <a href="#">privacy policy</a>.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== Footer ============================== -->
+<footer class="footer-section">
+  <div class="container py-5">
+    <div class="row gy-4">
+
+      <div class="col-lg-4 col-md-12">
+        <img src="images/vive-logo.png" height="40" alt="Vive Logo" class="footer-logo">
+        <p class="text-muted small">Refresh your body, boost your energy, and live in balance with every sip of Vive.</p>
+        <div class="social-icons">
+          <a href="#"><i class="bi bi-facebook"></i></a>
+          <a href="#"><i class="bi bi-instagram"></i></a>
+          <a href="#"><i class="bi bi-tiktok"></i></a>
+        </div>
+      </div>
+
+      <div class="col-lg-2 col-md-3 col-6">
+        <h5 class="mb-3">Products</h5>
+        <ul class="list-unstyled footer-links">
+          <li class="mb-2"><a href="vive-active.html">Vive Active</a></li>
+          <li class="mb-2"><a href="vive-green.html">Vive Green</a></li>
+          <li class="mb-2"><a href="vive-silver.html">Vive Silver</a></li>
+          <li class="mb-2"><a href="vive-gold.html">Vive Gold</a></li>
+        </ul>
+      </div>
+
+      <div class="col-lg-2 col-md-3 col-6">
+        <h5 class="mb-3">Support</h5>
+        <ul class="list-unstyled footer-links">
+          <li class="mb-2"><a href="contact.html">Help Center</a></li>
+          <li class="mb-2"><a href="faq.html">FAQs</a></li>
+          <li class="mb-2"><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+
+      <div class="col-lg-2 col-md-3 col-6">
+        <h5 class="mb-3">Explore</h5>
+        <ul class="list-unstyled footer-links">
+          <li class="mb-2"><a href="blog.html">Blog</a></li>
+          <li class="mb-2"><a href="events.html">Events</a></li>
+          <li class="mb-2"><a href="careers.html">Careers</a></li>
+        </ul>
+      </div>
+
+      <div class="col-lg-2 col-md-3 col-6">
+        <h5 class="mb-3">Contact Us</h5>
+        <ul class="list-unstyled footer-links">
+          <li class="mb-2"><a href="tel:+2348137310107"><i class="bi bi-telephone-fill me-2"></i>+2348137310107</a></li>
+          <li class="mb-2"><a href="mailto:info@vive.com"><i class="bi bi-envelope-fill me-2"></i>info@vive.com</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom d-flex flex-column flex-md-row justify-content-between align-items-center mt-4">
+      <p class="text-muted mb-2 mb-md-0">&copy; 2025 Vive. All rights reserved.</p>
+      <div class="footer-legal-links">
+        <a href="privacy.html" class="me-3">Privacy Policy</a>
+        <a href="terms.html" class="me-3">Terms of Use</a>
+        <a href="legal.html" class="me-3">Legal</a>
+        <a href="#">Site Map</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+<script src="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.js"></script>
+<script src="https://unpkg.com/leaflet-routing-machine/dist/leaflet-routing-machine.js"></script>
+
+
+
+<script src="scripts.js"></script>
+</body>
+</html>

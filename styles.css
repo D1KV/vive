@@ -1,0 +1,905 @@
+/* --- Google Font Import --- */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+/* --- Custom Variables --- */
+:root {
+    --primary-purple: #6A3DE8;
+    --dark-purple: #3a2d5c;
+    --body-font: 'Poppins', sans-serif;
+}
+
+/* --- Global Styles --- */
+body {
+    font-family: var(--body-font);
+}
+
+/* --- Top Bar --- */
+.top-bar {
+    background-color: #099b50;
+    font-size: 0.75rem;
+    letter-spacing: 1px;
+}
+
+/* --- Navbar Styles --- */
+.navbar {
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+.navbar-brand {
+    font-size: 1.5rem;
+    color: #000;
+}
+.navbar-toggler {
+    border: none;
+    font-size: 1.5rem;
+}
+.navbar-toggler:focus {
+    box-shadow: none;
+}
+.navbar-nav .nav-link {
+    font-weight: 500;
+    color: #555;
+    padding: 0.5rem 1.2rem;
+}
+.navbar-nav .nav-link.active {
+    background-color: #e7e7e7;
+    color: #099b50;
+    border-radius: 50px;
+}
+.btn-search {
+    border-radius: 50px;
+    padding: 0.6rem 1.5rem;
+    align-items: center;
+}
+
+.btn-nav-custom {
+    background-color: transparent;
+    color: #5e5e5e;
+    border-radius: 20px;
+    padding: 0.6rem 1.5rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+/* --- Hero Section Styles --- */
+.hero-section {
+    background-image: url('images/hero3.jpg'); /* IMPORTANT: Replace with your image path */
+    background-size: cover;
+    background-position: right center;
+    padding: 80px 0;
+    min-height: 90vh;
+}
+.hero-content .eyebrow {
+    font-size: 0.8rem;
+    letter-spacing: 2px;
+    color: #888;
+    font-weight: 600;
+    text-align: justify;
+    padding-top: 1.5rem;
+}
+.hero-content h1 {
+    color: #111;
+    text-align: justify;
+    padding-bottom: 1rem;
+
+}
+
+.hero-text {
+    text-align: justify;
+  
+}
+
+.btn-primary-custom {
+    background-color: #099b50;
+    color: white;
+    border: none;
+    border-radius: 50px;
+    padding: 0.8rem 2.5rem;
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+    justify-content:flex-start;
+    display: flex;
+    width: 180px
+}
+.btn-primary-custom:hover {
+    background-color: white;
+    color: #099b50;
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+.hero-dots .dot {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    background-color: #d1d1d1;
+    border-radius: 50%;
+    margin-right: 5px;
+}
+.hero-dots .dot.active {
+    background-color: #1a8080;
+}
+
+/* --- Floating Search Form Styles --- */
+.search-form-container {
+    background-color: white;
+    padding: 1rem;
+    border-radius: 50px;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.12);
+}
+.search-form-container .form-control {
+    background-color: transparent;
+    padding: 1rem 1.5rem;
+    font-weight: 500;
+}
+.search-form-container .form-control:focus {
+    box-shadow: none;
+}
+.search-form-container .form-control::placeholder {
+    color: #aaa;
+    font-weight: 500;
+}
+.search-form-container .btn-primary-custom {
+    padding-left: 3rem;
+    padding-right: 3rem;
+}
+
+
+/* Other Sections */
+section {
+    padding: 60px 0;
+}
+
+
+
+
+.hero-text {
+    opacity: 0;
+    animation: fadeSlideUp 1s ease forwards;
+}
+
+.btn-hero {
+    opacity: 0;
+    animation: fadeSlideUp 1s ease 0.4s forwards;
+}
+
+
+
+
+/* ---After Hero Section Styles--- */
+/* --- Google Font & Custom Variables --- */
+:root {
+    --primary-teal: #5cd0d3;
+    --primary-salmon: #f59f8c;
+    --light-gray-bg: #f8f9fa; /* Bootstrap's bg-light color */
+    --body-font: 'Poppins', sans-serif;
+}
+
+body {
+    font-family: var(--body-font);
+}
+
+/* --- Main Section Styling --- */
+.laundry-section h1 {
+    color: #333;
+}
+
+.see-products-btn {
+    background-color:#099b50;
+    color: white;
+    border-radius: 50px;
+    padding: 0.8rem 1.5rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+/* --- Right Column Styling --- */
+
+/* Video Container */
+.video-container {
+  position: relative;
+  width: 100%;
+  height: 100%; /* Ensures it takes full parent height */
+  overflow: hidden;
+}
+
+.vive-section .video-container img {
+  height: 500px;         /* reduce height */
+  width: 100%;
+  object-fit: cover;     /* keep aspect ratio but fill */
+  border-radius: 20px;
+}
+
+.video-container video {
+    /* Style the video to act like a background image */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: 0;
+}
+
+/* --- Play Button Styling --- */
+.play-btn {
+  background: transparent;   /* remove background */
+  border: none;              /* remove border */
+  padding: 0;                /* optional: shrink clickable area */
+}
+
+.play-btn i {
+  font-size: 4rem;   /* adjust size */
+  color: white;      /* keep white play icon */
+  transition: transform 0.3s ease;
+}
+
+.play-btn:hover i {
+  transform: scale(1.1);   /* subtle zoom effect */
+  color: #28a745;          /* optional: green hover */
+}
+
+
+
+/* Call Us Container */
+.call-us-container {
+    background-color: var(--primary-teal);
+    padding: 4rem 2rem;
+}
+
+
+
+/*Force Image size*/
+#products img {
+    height: 220px;          /* set a fixed uniform height */
+    width: auto;            /* keep proportions */
+    object-fit: contain;    /* make sure it fits without cropping */
+}
+
+.product-img-wrapper {
+    height: 220px;      /* same height for all */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.product-img-wrapper img {
+    max-height: 100%;
+    max-width: 100%;
+    object-fit: contain;
+}
+
+/* --- Product Cards --- */
+.product-card {
+  border: none;
+  border-radius: 12px;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.08);
+  transition: transform 0.2s ease;
+}
+
+.product-card:hover {
+  transform: translateY(-4px);
+}
+
+.product-card img {
+  max-height: 220px;
+  object-fit: contain;
+}
+
+.product-card .card-title {
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.product-card .card-text {
+  font-size: 0.9rem;
+  color: #6c757d;
+}
+
+.product-card .btn {
+  font-size: 0.85rem;
+  padding: 0.4rem 1.1rem;
+}
+
+.vive-heading h2::after {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(90deg, #28a745, #5cd45c);
+  margin: 0.3rem auto 0; /* space below heading */
+  border-radius: 2px;
+}
+
+.products-heading{
+    padding-top: 4rem;
+}
+
+
+.product-img {
+  width: 100% !important;
+  height: 300px !important;
+  object-fit: contain;
+}
+
+
+
+
+/* Testionials Section */
+/* --- Google Font & Custom Variables --- */
+:root {
+    --dark-green: #3a6b35;
+    --medium-green: #81c784; /* For the quote graphic */
+    --light-green: #c8e6c9;  /* For the main card background */
+    --text-dark: #212529;
+    --body-font: 'Poppins', sans-serif;
+}
+
+body {
+    font-family: var(--body-font);
+}
+
+/* --- Testimonial Section --- */
+.testimonial-section {
+    background-color: rgb(244, 244, 244);
+    padding: 100px 0;
+}
+
+.testimonial-card {
+    position: relative;
+    padding: 2rem;
+    padding-left: 4rem; /* Make space for the quote graphic */
+}
+
+/* --- SVG Quote Graphic Styling --- */
+/* Position quotes above card */
+.testimonial-quote-graphic {
+  position: relative;
+  bottom: auto;
+  left: auto;
+  margin: 0 auto 1rem auto;
+  width: 70px;
+  height: auto;
+  z-index: 2;
+}
+
+.testimonial-quote-graphic svg {
+  width: 100%;
+  fill: var(--medium-green);
+  opacity: 0.9;
+}
+
+
+/* --- Main Content Card Styling --- */
+.testimonial-content {
+    background-color: var(--light-green);
+    padding: 2.5rem;
+    border-radius: 15px;
+    position: relative;
+    z-index: 2; /* Sits on top of the quote graphic */
+}
+
+.quote-text {
+    font-size: clamp(1.1rem, 2.5vw, 1.5rem); /* Responsive font size */
+    font-weight: 500;
+    line-height: 1.6;
+    color: var(--text-dark);
+}
+
+.author-details h5 {
+    color: var(--text-dark);
+}
+
+.company-logo {
+    max-height: 40px;
+    width: auto;
+    filter: grayscale(100%) contrast(0%) brightness(10%); /* Makes logo dark */
+    opacity: 0.8;
+}
+
+/* --- Custom Carousel Controls --- */
+.carousel-control-prev,
+.carousel-control-next {
+    width: 5%;
+}
+
+.carousel-control-icon i {
+    font-size: 2.5rem;
+    color: rgba(255, 255, 255, 0.7);
+    transition: color 0.3s ease;
+}
+
+.carousel-control-prev:hover .carousel-control-icon i,
+.carousel-control-next:hover .carousel-control-icon i {
+    color: #fff;
+}
+
+/* Brand vars (adjust if you already defined these elsewhere) */
+:root{
+  --dark-green: #0b7d2e;
+  --medium-green: #22a24a;
+  --light-green: #e8f6ed;
+  --nl-overlap: 96px; /* amount the newsletter overlaps into the footer */
+}
+
+/* Keep footer full-width; add top padding so overlap has room */
+.footer-section{
+  background-color:#ffffff;
+  padding-top: calc(var(--nl-overlap) + 2rem);
+  position: relative;
+  z-index: 1;
+}
+
+/* Make the newsletter actually overlap into the footer */
+.newsletter-wrapper{
+  position: relative;
+  margin-top: 3rem;           /* spacing above newsletter */
+  margin-bottom: calc(-1 * var(--nl-overlap)); /* pull it into the footer */
+  z-index: 2;                 /* above the footer */
+}
+
+/* Newsletter box */
+.newsletter-section{
+  background: linear-gradient(135deg, var(--dark-green), var(--medium-green));
+  color:#fff;
+  padding:2rem;
+  border-radius:1rem;
+}
+
+.newsletter-section h3{
+  font-weight:700;
+}
+
+.text-white-75{
+  color:rgba(255,255,255,.75)!important;
+}
+
+.newsletter-section .form-control{
+  border-radius:2rem 0 0 2rem;
+  padding:.75rem 1.25rem;
+  border:none;
+}
+
+.newsletter-section .btn-subscribe{
+  border-radius:0 2rem 2rem 0;
+  padding:.75rem 1.5rem;
+  background-color:#fff;
+  color:var(--dark-green);
+  font-weight:600;
+  border:none;
+  transition: background-color .25s ease;
+}
+
+.newsletter-section .btn-subscribe:hover{
+  background-color:#e9ecef;
+}
+
+.newsletter-section .privacy-link{
+  font-size:.85rem;
+  color:rgba(255,255,255,.8);
+}
+
+.newsletter-section .privacy-link a{
+  color:#fff;
+  text-decoration:underline;
+}
+
+/* Footer styles */
+.footer-logo{
+  font-weight:700;
+  color:var(--dark-green);
+}
+
+.footer-section .social-icons a{
+  color:#6c757d;
+  font-size:1.25rem;
+  margin-right:1rem;
+  transition: color .25s ease;
+}
+.footer-section .social-icons a:hover{
+  color:var(--dark-green);
+}
+
+.footer-section .footer-links a{
+  color:#6c757d;
+  text-decoration:none;
+  transition: color .25s ease;
+}
+.footer-section .footer-links a:hover{
+  color:var(--dark-green);
+}
+
+/* Bottom strip */
+.footer-section .footer-bottom{
+  border-top:1px solid #dee2e6;
+  padding-top:1rem;
+  padding-bottom:1rem;
+  font-size:.9rem;
+}
+.footer-section .footer-bottom a{
+  color:#6c757d;
+  text-decoration:none;
+}
+.footer-section .footer-bottom a:hover{
+  text-decoration:underline;
+}
+
+
+/* Envelope Icon Animation */
+
+.envelope-icon {
+  width: 120px;
+  animation: wiggle 3s infinite ease-in-out, glowPulse 3s infinite ease-in-out;
+}
+
+/* Wiggle animation */
+@keyframes wiggle {
+  0%, 100% { transform: rotate(0deg); }
+  15% { transform: rotate(-5deg); }
+  30% { transform: rotate(5deg); }
+  45% { transform: rotate(-3deg); }
+  60% { transform: rotate(3deg); }
+  75% { transform: rotate(0deg); }
+}
+
+/* Flap opening/closing */
+.envelope-icon .flap {
+  transform-origin: 32px 16px; /* top-center hinge */
+  animation: flapOpen 3s infinite ease-in-out;
+}
+
+@keyframes flapOpen {
+  0%, 100% { transform: rotateX(0deg); }
+  50% { transform: rotateX(-40deg); }
+}
+
+/* Shadow Glow Pulse */
+@keyframes glowPulse {
+  0%, 100% {
+    filter: drop-shadow(0 0 5px rgba(11, 125, 46, 0.4));
+  }
+  50% {
+    filter: drop-shadow(0 0 15px rgba(11, 125, 46, 0.8));
+  }
+}
+
+
+
+
+/* About Us Page */
+/* ============================================= */
+/* == STYLES FOR ABOUT US PAGE (ADD TO BOTTOM) == */
+/* ============================================= */
+
+/* Page Title Section */
+.page-title-section {
+    padding: 80px 0;
+}
+
+/* Nutrient Section */
+.highlight-box {
+    background-color: var(--brand-color);
+    color: white;
+    padding: 2.5rem;
+    border-radius: 0.75rem;
+    box-shadow: 0 10px 25px rgba(128, 180, 53, 0.3);
+}
+
+.highlight-box h5 {
+    color: white; /* Ensure headings inside are white too */
+}
+.highlight-box i {
+    color: white;
+}
+
+/* CTA Section */
+.cta-section {
+    background-image: url('https://via.placeholder.com/1920x500'); /* REPLACE with your background image */
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed; /* Creates a nice parallax effect */
+    padding: 100px 0;
+    position: relative;
+    z-index: 1;
+}
+
+.cta-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Dark overlay for text readability */
+    z-index: -1;
+}
+
+/* Team Section */
+.team-member img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border: 5px solid #fff;
+}
+
+.page-title-section {
+  background: url('images/hero1.jpg') center center/cover no-repeat;
+  min-height: 300px;
+  position: relative;
+}
+
+.page-title-section::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0, 0, 0, 0.1); /* dark overlay */
+}
+
+.page-title-section .container {
+  position: relative;
+  z-index: 2;
+}
+
+.about-page-text {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #333;
+  margin-top: 20px;
+}
+
+.member-section {
+  background-color: #e7e7e7;
+}
+
+
+/* Map Section */
+#map {
+  width: 100%;
+  height: 400px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+
+/* Bounce effect for markers */
+.leaflet-marker-icon.bounce {
+  animation: bounce 0.8s ease;
+}
+
+@keyframes bounce {
+  0%   { transform: translateY(0); }
+  30%  { transform: translateY(-20px); }
+  50%  { transform: translateY(0); }
+  70%  { transform: translateY(-10px); }
+  100% { transform: translateY(0); }
+}
+
+
+/* All Products Page */
+/* Base */
+body { background:#fff; color:#202326; }
+.navbar .brand-pill{
+  font-weight:800; font-size:1.35rem; letter-spacing:.2px;
+}
+
+/* Hero */
+.hero-products{
+  padding:4.5rem 0 4rem;
+  background:linear-gradient(180deg, #ffffff 0%, #f7faf7 100%);
+  overflow:hidden;
+}
+.hero-products .hero-bg{
+  position:absolute; inset:0;
+  width:100%; height:100%; object-fit:cover;
+  opacity:.25; filter:saturate(1.2) contrast(1.1);
+}
+.hero-products .container{ position:relative; }
+
+/* Testimonials */
+.testimonial .avatar{
+  width:48px; height:48px; border-radius:50%; object-fit:cover;
+}
+
+/* Products Scroll Section */
+.products-scroll {
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  padding-bottom: 1rem;
+}
+.product-card {
+  min-width: 260px;
+  max-width: 260px;
+  border: none;
+  border-radius: 1rem;
+  box-shadow: 0 8px 20px rgba(0,0,0,.08);
+  scroll-snap-align: start;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.product-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 30px rgba(0,0,0,.1);
+}
+
+.product-card img {
+  height: 220px;
+  object-fit: contain;
+}
+
+.products-testimonials{
+    background-color: #ededed;
+}
+
+/* Hero Cover Image */
+.hero-products {
+  position: relative;
+  min-height: 50vh;
+  background: url("images/hero1.jpg") center/cover no-repeat;
+}
+.hero-products .hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.1); /* dark overlay */
+}
+.hero-products .container {
+  position: relative;
+  z-index: 2;
+}
+
+.products-hero-text {
+  font-size: 1.2rem;
+  color: #333;
+  margin-top: 1rem;
+}
+
+/* Product Hero Section */
+.product-hero {
+  background: linear-gradient(180deg, rgba(34,166,78,0.9), rgba(20,120,50,0.9)), 
+              url("images/cover-vive.jpg") center/cover no-repeat;
+  min-height: 70vh;
+  text-align: center;
+}
+.product-hero-img {
+  max-width: 200px;
+  filter: drop-shadow(0 10px 20px rgba(0,0,0,0.3));
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* Contacts Page */
+ :root{ --brand:#22a64e; }
+    body{ background:#f7faf9; }
+    .hero{ background:linear-gradient(180deg,#ffffff, #eef7f0); }
+    .card-soft{ border:0; border-radius:14px; box-shadow:0 14px 28px rgba(0,0,0,.06); }
+    .icon-pill{
+      width:42px; height:42px; border-radius:50%;
+      display:grid; place-items:center; background:#e9f6ee; color:var(--brand);
+    }
+    .btn-brand{ background:var(--brand); color:#fff; }
+    .btn-brand:hover{ filter:brightness(.95); color:#fff; }
+    .form-control, .form-select{ border-radius:.8rem; }
+    .social a{ width:40px; height:40px; display:inline-grid; place-items:center; border-radius:50%; }
+    .map-embed{ border:0; width:100%; height:320px; border-radius:14px; }
+
+
+    /* Careers Page */
+     :root{ --brand:#1fc256; }
+    body{ background:#f7faf9; }
+    
+    .hero{ background:linear-gradient(180deg,#ffffff, #eef7f0); }
+    
+    .card-soft{ border:0; border-radius:14px; box-shadow:0 14px 28px rgba(0,0,0,.06); }
+    
+    .btn-brand{ 
+      background:var(--brand); color:#fff; 
+      font-size: 15px;
+    }
+    
+      .btn-brand:hover{ filter:brightness(.95); color:#fff; }
+    
+      .form-control, .form-select{ border-radius:.8rem; }
+    
+      .role-card{ border-radius:12px; border:1px solid #e7eee9; }
+    
+      .pill{ background:#e9f6ee; color:#158f40; padding:.25rem .6rem; border-radius:999px; font-size:.8rem; }
+
+
+      .partner-top {
+        color:black;
+        padding-top: 60px;
+      }
+
+
+      .partner-text {
+        color:black;
+      }
+
+
+
+/* Event Page Hero */
+.event-hero {
+  background: url('images/event-hero.jpg') center/cover no-repeat;
+  height: 60vh;
+  text-shadow: 0 3px 8px rgba(0, 0, 0, 0.5);
+}
+.event-hero h1 {
+  font-size: 3rem;
+}
+.event-hero p {
+  font-size: 1.25rem;
+}
+
+
+
+/* Homepage Event Promo */
+.event-promo {
+  background: linear-gradient(rgb(20, 182, 144), rgba(71, 209, 66, 0.9)), 
+              url('images/event-banner.jpg') center/cover no-repeat;
+}
+
+
+/* Distributor Page Hero */
+.distributor-hero {
+  background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)),
+              url('images/distributor-banner.jpg') center/cover no-repeat;
+  height: 55vh;
+  text-shadow: 0 3px 10px rgba(0,0,0,0.5);
+}
+.distributor-hero h1 {
+  font-size: 3rem;
+}
+
+
+
+/* FAQ Hero */
+.faq-hero {
+  height: 45vh;
+  background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)),
+              url('images/faq-banner.jpg') center/cover no-repeat;
+  text-shadow: 0 3px 8px rgba(0,0,0,0.5);
+}
+
+/* Accordion styling */
+.accordion-button {
+  background: #f5fff4;
+  color: #0a3b1e;
+}
+.accordion-button:not(.collapsed) {
+  background: #e2f9e2;
+  color: #0a3b1e;
+}
+.accordion-body {
+  background: #ffffff;
+}
+
+/* CTA */
+.faq-cta {
+  background: #f9fff9;
+}
+
+
+
+
+/* Privacy Hero Section */
+.privacy-hero {
+  height: 45vh;
+  background: linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)),
+              url('images/privacy-cover.jpg') center/cover no-repeat;
+  text-shadow: 0 3px 8px rgba(0,0,0,0.5);
+}
+
+
+
+

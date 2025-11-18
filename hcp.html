@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Healthcare Professionals - Vive</title>
+
+  <!-- Bootstrap + Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+
+
+     <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.css" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet-routing-machine/dist/leaflet-routing-machine.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+
+
+  
+  <!-- Custom CSS -->
+  <style>
+    body { font-family: 'Poppins', sans-serif; }
+
+    /* Hero Section */
+    .hcp-hero {
+      position: relative;
+      background: url('images/hcp-cover.jpg') center/cover no-repeat;
+      color: #fff;
+      padding: 6rem 0;
+    }
+    .hcp-hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 80, 40, 0.65);
+    }
+    .hcp-hero .container {
+      position: relative;
+      z-index: 2;
+    }
+
+    /* Highlights */
+    .hcp-highlights .icon-box {
+      background: #f7faf7;
+      border-radius: 12px;
+      padding: 2rem 1rem;
+      transition: transform 0.3s ease;
+      height: 100%;
+    }
+    .hcp-highlights .icon-box:hover { transform: translateY(-5px); }
+    .hcp-highlights i { font-size: 2rem; color: #198754; }
+
+    /* Form Section */
+    .hcp-form-section { background: #f9fdf9; padding: 4rem 0; }
+    .hcp-form-card {
+      background: #fff; padding: 2.5rem; border-radius: 12px;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+    }
+    .hcp-form-card h3 { font-weight: 700; margin-bottom: 1.5rem; }
+    .hcp-form-card .form-control { border-radius: 8px; }
+    .hcp-form-card .btn { border-radius: 30px; padding: 0.6rem 1.5rem; }
+
+    /* Security Note */
+    .hcp-note { font-size: 0.85rem; color: #666; margin-top: 1rem; }
+  </style>
+</head>
+<body>
+
+
+      <!-- Top Bar -->
+    <div class="top-bar text-center text-white py-1">
+        Nature's science in every sip.
+    </div>
+
+    <nav class="navbar navbar-expand-lg bg-white sticky-top">
+        <div class="container">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <i class="bi bi-list"></i>
+            </button>
+            
+           <a class="navbar-brand" href="#">
+          <img src="images/vive-logo.png" alt="Vive Logo" height="40">
+          </a>
+            
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">About us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="products.html">Products</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contact</a>
+                    </li>
+                </ul>
+            </div>
+
+            <a href="#" class="btn btn-nav-custom shadow">Become a Distributor</a>
+        </div>
+    </nav>
+    
+
+  <!-- HERO -->
+  <section class="hcp-hero text-center text-white">
+    <div class="container">
+      <h1 class="display-4 fw-bold">Healthcare Professionals Portal</h1>
+      <p class="lead">Exclusive access to clinical insights, product details, and trial opportunities — for verified healthcare professionals only.</p>
+    </div>
+  </section>
+
+  <!-- WHY REGISTER -->
+  <section class="hcp-highlights py-5">
+    <div class="container">
+      <div class="row g-4 text-center">
+        <div class="col-md-4">
+          <div class="icon-box shadow-sm">
+            <i class="bi bi-journal-medical mb-3"></i>
+            <h5 class="fw-bold">Clinical Information</h5>
+            <p class="text-muted">Gain access to detailed ingredient research, formulations, and product data.</p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="icon-box shadow-sm">
+            <i class="bi bi-capsule mb-3"></i>
+            <h5 class="fw-bold">Product Samples</h5>
+            <p class="text-muted">Request trial packs to evaluate products within your practice (upon approval).</p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="icon-box shadow-sm">
+            <i class="bi bi-headset mb-3"></i>
+            <h5 class="fw-bold">Direct Support</h5>
+            <p class="text-muted">Connect with our team for professional inquiries and patient-focused support.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- REGISTRATION FORM -->
+  <section class="hcp-form-section">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-8">
+          <div class="hcp-form-card">
+            <h3 class="text-center mb-4">Register for Access</h3>
+            <form id="hcp-form">
+              <div class="row g-3">
+                <div class="col-md-6">
+                  <label class="form-label">Full Name</label>
+                  <input type="text" class="form-control" required>
+                </div>
+                <div class="col-md-6">
+                  <label class="form-label">Professional Title</label>
+                  <input type="text" class="form-control" placeholder="Doctor, Pharmacist, etc." required>
+                </div>
+                <div class="col-md-6">
+                  <label class="form-label">Medical License / Reg. ID</label>
+                  <input type="text" class="form-control" required>
+                </div>
+                <div class="col-md-6">
+                  <label class="form-label">Institution / Hospital / Pharmacy</label>
+                  <input type="text" class="form-control" required>
+                </div>
+                <div class="col-md-6">
+                  <label class="form-label">Email Address</label>
+                  <input type="email" class="form-control" required>
+                </div>
+                <div class="col-md-6">
+                  <label class="form-label">Phone Number</label>
+                  <input type="tel" class="form-control" required>
+                </div>
+                <div class="col-md-6">
+                  <label class="form-label">Country</label>
+                  <input type="text" class="form-control" required>
+                </div>
+                <div class="col-md-6">
+                  <label class="form-label">State</label>
+                  <input type="text" class="form-control">
+                </div>
+              </div>
+
+              <div class="form-check mt-4">
+                <input class="form-check-input" type="checkbox" id="hcp-confirm" required>
+                <label class="form-check-label" for="hcp-confirm">
+                  I confirm I am a registered healthcare professional
+                </label>
+              </div>
+
+              <div class="text-center mt-4">
+                <button type="submit" class="btn btn-success px-5">Submit Request</button>
+              </div>
+            </form>
+            <p class="hcp-note text-center mt-3">
+              🔒 Access is subject to verification by Vive. Only licensed healthcare professionals will be approved.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================== Footer ============================== -->
+<footer class="footer-section">
+  <div class="container py-5">
+    <div class="row gy-4">
+
+      <div class="col-lg-4 col-md-12">
+        <img src="images/vive-logo.png" height="40" alt="Vive Logo" class="footer-logo">
+        <p class="text-muted small">Refresh your body, boost your energy, and live in balance with every sip of Vive.</p>
+        <div class="social-icons">
+          <a href="#"><i class="bi bi-facebook"></i></a>
+          <a href="#"><i class="bi bi-instagram"></i></a>
+          <a href="#"><i class="bi bi-tiktok"></i></a>
+        </div>
+      </div>
+
+      <div class="col-lg-2 col-md-3 col-6">
+        <h5 class="mb-3">Products</h5>
+        <ul class="list-unstyled footer-links">
+          <li class="mb-2"><a href="vive-active.html">Vive Active</a></li>
+          <li class="mb-2"><a href="vive-green.html">Vive Green</a></li>
+          <li class="mb-2"><a href="vive-silver.html">Vive Silver</a></li>
+          <li class="mb-2"><a href="vive-gold.html">Vive Gold</a></li>
+        </ul>
+      </div>
+
+      <div class="col-lg-2 col-md-3 col-6">
+        <h5 class="mb-3">Support</h5>
+        <ul class="list-unstyled footer-links">
+          <li class="mb-2"><a href="contact.html">Help Center</a></li>
+          <li class="mb-2"><a href="faq.html">FAQs</a></li>
+          <li class="mb-2"><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+
+      <div class="col-lg-2 col-md-3 col-6">
+        <h5 class="mb-3">Explore</h5>
+        <ul class="list-unstyled footer-links">
+          <li class="mb-2"><a href="blog.html">Blog</a></li>
+          <li class="mb-2"><a href="events.html">Events</a></li>
+          <li class="mb-2"><a href="careers.html">Careers</a></li>
+        </ul>
+      </div>
+
+      <div class="col-lg-2 col-md-3 col-6">
+        <h5 class="mb-3">Contact Us</h5>
+        <ul class="list-unstyled footer-links">
+          <li class="mb-2"><a href="tel:+2348137310107"><i class="bi bi-telephone-fill me-2"></i>+2348137310107</a></li>
+          <li class="mb-2"><a href="mailto:info@vive.com"><i class="bi bi-envelope-fill me-2"></i>info@vive.com</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom d-flex flex-column flex-md-row justify-content-between align-items-center mt-4">
+      <p class="text-muted mb-2 mb-md-0">&copy; 2025 Vive. All rights reserved.</p>
+      <div class="footer-legal-links">
+        <a href="privacy.html" class="me-3">Privacy Policy</a>
+        <a href="terms.html" class="me-3">Terms of Use</a>
+        <a href="legal.html" class="me-3">Legal</a>
+        <a href="#">Site Map</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+  <!-- CONFIRMATION MODAL -->
+  <div class="modal fade" id="confirmationModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content text-center p-4">
+        <div class="modal-body">
+          <i class="bi bi-check-circle-fill text-success fs-1 mb-3"></i>
+          <h4 class="fw-bold">Request Submitted</h4>
+          <p class="text-muted">Thank you for registering. Your details will be reviewed by our team. Access will be granted once verified.</p>
+          <button type="button" class="btn btn-success rounded-pill mt-3" data-bs-dismiss="modal">Okay</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    document.getElementById("hcp-form").addEventListener("submit", function(e){
+      e.preventDefault();
+      const modal = new bootstrap.Modal(document.getElementById("confirmationModal"));
+      modal.show();
+      this.reset();
+    });
+  </script>
+</body>
+</html>
