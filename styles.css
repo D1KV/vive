@@ -1226,25 +1226,6 @@ footer {
   background: linear-gradient(180deg, rgba(255, 255, 255, 0.72), rgba(255, 255, 255, 0.20));
 }
 
-.about-hero {
-  background:
-    linear-gradient(135deg, rgba(255, 255, 255, 0.38), rgba(240, 247, 238, 0.18)),
-    url('images/hero1.jpg') center/cover no-repeat;
-}
-
-.about-hero::before {
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.26), rgba(255, 255, 255, 0.04));
-}
-
-.about-hero .container {
-  max-width: 44rem;
-  padding: 1.75rem 2rem;
-  border-radius: 1.6rem;
-  background: rgba(255, 255, 255, 0.26);
-  backdrop-filter: blur(6px);
-  -webkit-backdrop-filter: blur(6px);
-}
-
 .hero-products,
 .product-hero,
 .event-hero,
