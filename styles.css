@@ -777,7 +777,8 @@ body { background:#fff; color:#202326; }
 .active-hero {
   background:
     linear-gradient(180deg, rgba(11, 64, 33, 0.34), rgba(11, 64, 33, 0.42)),
-    url("images/hero.png") center/cover no-repeat;
+    url("images/hero2.png") center/cover no-repeat;
+  min-height: 54vh;
 }
 
 .active-hero .container {
